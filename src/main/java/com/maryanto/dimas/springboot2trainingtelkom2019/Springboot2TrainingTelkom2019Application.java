@@ -1,13 +1,20 @@
 package com.maryanto.dimas.springboot2trainingtelkom2019;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.maryanto.dimas.springboot2trainingtelkom2019.di.*;
 
-@SpringBootApplication
 public class Springboot2TrainingTelkom2019Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Springboot2TrainingTelkom2019Application.class, args);
-	}
+    public static void main(String[] args) {
+        ClassF f = new ClassF();
+        f.setNama("Nama saya dimas maryanto");
+        ClassE e = new ClassE();
+        ClassD d = new ClassD(e, f);
+        ClassC c = new ClassC(d);
+        ClassB b = new ClassB(c, d);
+        ClassA a = new ClassA(b);
+
+        System.out.println("f nama "+ a.getB().getC().getD().getF().getNama());
+
+    }
 
 }
