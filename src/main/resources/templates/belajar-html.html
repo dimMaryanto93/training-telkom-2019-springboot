@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<h3>Title judul</h3>
+<h3>Form Input</h3>
 <form th:object="${mahasiswa}"
       th:method="get"
       th:action="@{/haloPost}">
@@ -23,5 +23,23 @@
     </div>
 
 </form>
+
+<h3>Daftar Mahasiswa</h3>
+<table>
+    <thead>
+    <tr>
+        <td>No</td>
+        <td>Nama</td>
+        <td>Umur</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="student,iterStat: ${listMahasiswa}">
+        <td th:text="${iterStat.count}">1</td>
+        <td th:text="${student.nama}">Dimas Maryanto</td>
+        <td th:text="${student.umur}">20</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
