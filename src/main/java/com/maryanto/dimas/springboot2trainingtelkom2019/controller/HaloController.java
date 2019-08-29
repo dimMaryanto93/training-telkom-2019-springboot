@@ -5,8 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Date;
-
 @Controller
 public class HaloController {
 
@@ -15,8 +13,8 @@ public class HaloController {
             Model model,
             @RequestParam(required = false) String nama,
             @RequestParam(required = false) Integer umur) {
-        model.addAttribute("tanggal", new Date());
-        model.addAttribute("message", "Halo ini dari bahasa indonesia");
+        model.addAttribute("nama", nama);
+        model.addAttribute("umur", umur);
         System.out.println("nama dari request " + nama + ", umur dari request = " + umur);
         return "belajar-html";
     }
