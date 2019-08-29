@@ -6,10 +6,22 @@
 </head>
 <body>
 <h3>Title judul</h3>
-    <label for="nama">Nama</label>
-    <input type="text" name="nama" id="nama" th:value="${nama}">
+<form th:object="${mahasiswa}"
+      th:method="get"
+      th:action="@{/haloPost}">
+    <div class="form-group">
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" class="form-control" name="nama" th:field="*{nama}"/>
+    </div>
+    <div class="form-group">
+        <label for="umur">Umur</label>
+        <input type="number" name="umur" id="umur" th:field="*{umur}"/>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Kirim</button>
+        <button type="reset" class="btn btn-warning">Reset</button>
+    </div>
 
-    <label for="umur">Umur</label>
-    <input type="text" name="nama" id="umur" th:value="${umur}">
+</form>
 </body>
 </html>
