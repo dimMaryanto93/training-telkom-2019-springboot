@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  mysql:
+    image: repository.dimas-maryanto.com:8086/mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - springboot-network
+volumes:
+  mysql_data:
+networks:
+  springboot-network:
+
